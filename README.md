@@ -1,4 +1,4 @@
-# Model-Agnostic Meta-Learning for Adaptive Filter
+# Model-Agnostic Meta-Learning (MAML) for Adaptive Filter
 
 This document describes the process and findings of testing the MAML algorithm for enhancing the convergence of the FxLMS algorithm in noise cancellation applications, specifically targeting aircraft noise.
 
@@ -35,6 +35,12 @@ clear     ;
 clc       ;
 ```
 #### Configure the system simulation condition
+This code snippet provides the system configuration for the numerical simulation. In this program, $f\_s$ and $T$ denote the system sampling rate and the simulation duration, respectively. $Len\_N$ repesents the length of the control filter. 
+
+| Para  | Definition                   | Para | Definition          |
+|-------|------------------------------|------|---------------------|
+| fs    | Sampling rate                | T    | Simulation duration |
+| Len_N | Length of the control filter |      |                     |
 
 ```matlab
 %% Configure the system simulation condition 
@@ -50,6 +56,14 @@ pause(.5)
 ```
 
 #### Build the broad band noise for training set
+ This section of the program produces filtered references, disturbances, and primary noises. These are then used in the modified MAML algorithm to obtain the initial control filter. The main sounds consist of three distinct broadband noises, as depicted in Figure S1.   
+
+| Para     | Definition                     | Para      | Definition                 |
+|----------|--------------------------------|-----------|----------------------------|
+| Pri_path | Primary path                   | Track_num | Number of the noise tracks |
+| Pri_n    | n-th primary noise             | Dis_n     | n-th disturbance           |
+| Rf_n     | n-th filtered reference vector |           |                            |
+
 ```matlab
 %% Build the broad band noise for training set
 %<<===Progress bar===>> 
