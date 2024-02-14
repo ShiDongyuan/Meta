@@ -241,7 +241,16 @@ Figure S3: Aircraft noise reduction performance of the FxLMS algorithms with the
 
 <img src=Images/MAML_algorithm.jpg width=50% />
 
-The provided code segment executes the modified MAML algorithm as outlined in Table I. The random sampling method is completed during dataset preparation. The code provided fully implements steps 4 to 7, and these steps are clearly described in the comments of the code.    
+The provided code segment executes the modified MAML algorithm as outlined in Table I. The random sampling method is completed during dataset preparation. The code provided fully implements steps 4 to 7, and these steps are clearly described in the comments of the code.  
+
+| Para   | Definition                | Para  | Definition               |
+|--------|---------------------------|-------|--------------------------|
+| Phi    | Initial control filter    | len_c | Length of control filter |
+| Fx     | Filtered reference vector | Di    | Disturbance vector       |
+| Grad   | Gradient accumulator      | Er    | Error signal             |
+| mu     | Stepsize of FxLMS         | lamda | Forgetting factor        |
+| epslon | Learning rate of MAML     |       |                          |
+| Li     | Length of control filter  | e     | error signal             |
 
 ```matlab
 %     __  ___          ___ _____          __   __  ______     __  _____
@@ -312,6 +321,12 @@ end
 ---
 ### The explanation of `FxLMS.m`
 This Matlab code implements the single-channel FxLMS approach, which is used to compare with the proposed MAML approach in the present investigation. To ensure simplicity, this program directly handles the filtered reference vector. 
+
+| Para       | Definition               | Para       | Definition                |
+|------------|--------------------------|------------|---------------------------|
+| Len_Filter | Length of control filter | Wc_initial | Initial control filter    |
+| Dis        | Disturbance vector       | Rf         | Filtered reference vector |
+| muW        | Stepsize of FxLMS        | Er         | Error signal              |
 
 ```matlab
 %  __________   ___  __      .___  ___.      _______.
