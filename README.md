@@ -225,7 +225,9 @@ Figure S3: Aircraft noise reduction performance of the FxLMS algorithms with the
 ---
 ### The explanation of `MAML_Nstep_forget.m`
 
-<img src=Images/MAML_algorithm.jpg width=60% />
+<img src=Images/MAML_algorithm.jpg width=50% />
+
+The provided code segment executes the modified MAML algorithm as outlined in Table I. The random sampling method is completed during dataset preparation. The code provided fully implements steps 4 to 7, and these steps are clearly described in the comments of the code.    
 
 ```matlab
 %     __  ___          ___ _____          __   __  ______     __  _____
