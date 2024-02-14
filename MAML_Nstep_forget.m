@@ -37,7 +37,7 @@ classdef MAML_Nstep_forget
             % lamda : the forget factor 
             Fx   = flipud(Fx);
             Dis  = flipud(Di); 
-            Grad = 0; % Temporal gradiant accumlator 
+            Grad = 0; % Temporal gradient accumulator
             Er   = 0; % Training error signal 
             Li   = length(obj.Phi) ; % The length of the control filter in the FxLMS algorithm. 
 			%<-4-> Get the error signal based on the initial control filter. 
