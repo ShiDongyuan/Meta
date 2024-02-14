@@ -7,6 +7,11 @@ This document describes the process and findings of testing the MAML algorithm f
 The purpose of this test is to evaluate the Modified MAML (Model-Agnostic Meta-Learning) algorithm's effectiveness in initializing control filters for noise cancellation.
 
 ## Code Explanation
+- `Main_tst_function.m`: the main function is utilized to test the proposed modified MAML algorithm.  
+- `MAML_Nstep_forget.m`: the matlab code of the modified MAML algorithm.
+- `FxLMS.m`: the matlab code of the FxLMS algorithm.
+- `707_Sound_for_Simulation.mat`: the raw data of an aircrat noise.
+- `\path`: the measured primary and secondary paths. 
 
 ### The explanation of `Main_tst_function.m`
 
@@ -219,5 +224,18 @@ Figure S3: Aircraft noise reduction performance of the FxLMS algorithms with the
 ## Conclusion 
 
 A step-by-step guide to preparing the broadband noise for the training set, simulating the noise environment, and applying the MAML algorithm.
+
+## Reference 
+``` bibtex
+@article{shi2021fast,
+  title={Fast adaptive active noise control based on modified model-agnostic meta-learning algorithm},
+  author={Shi, Dongyuan and Gan, Woon-Seng and Lam, Bhan and Ooi, Kenneth},
+  journal={IEEE Signal Processing Letters},
+  volume={28},
+  pages={593--597},
+  year={2021},
+  publisher={IEEE}
+}
+```
 
 
