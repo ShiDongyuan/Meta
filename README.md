@@ -22,7 +22,7 @@ The following code snippet offers a concise overview of `Main_tst_function.m`, w
 - [Clean the memory and worksapace](#clean-the-memory-and-worksapace)
 - [Configure the system simulation condition](#configure-the-system-simulation-condition)  
 - [Build the broad band noise for training set](#build-the-broad-band-noise-for-training-set)
-- [Radomly sampling the noise tracks to build dataset for the MAML algorithm](#radomly-sampling-the-noise-tracks-to-build-dataset-for-the-maml-algorithm)
+- [Randomly sampling the noise tracks to build dataset for the MAML algorithm](#randomly-sampling-the-noise-tracks-to-build-dataset-for-the-maml-algorithm)
 - [Using Modified MAML algorithm to get the best initial control filter](#using-modified-maml-algorithm-to-get-the-best-initial-control-filter)
 - [Testing aircraft noise cancellation by using MAML initial control filter](#testing-aircraft-noise-cancellation-by-using-maml-initial-control-filter)
 
@@ -126,7 +126,16 @@ end
 ![Primary noises](Images/Main_tst_function_03.png)  
 Figure S1: The frequency spectrum of the primary noises for the MAML algorithm.
 
-#### Radomly sampling the noise tracks to build dataset for the MAML algorithm
+#### Randomly sampling the noise tracks to build dataset for the MAML algorithm
+
+This part of the program randomly samples the previously generated three types of noise tracks and their corresponding reference signals and disturbances to form the dataset. The length of the sampled vector equals that of the control filter, and these samples will be used in the proposed MAML algorithm to get the best initial control filter. 
+
+
+| Parameter | Definition               | Parameter | Definition               |
+|-----------|--------------------------|-----------|--------------------------|
+| N\_epcho  | Number of training epoch | Di\_data  | Disturbance matrix       |
+| Fx\_data  | Reference signal matrix  | Trac      | Randomly sampling matrix |
+
 ```matlab
 %% Radomly sampling the noise tracks to build dataset for the MAML algorithm
 %<<===Progress bar===>> 
@@ -156,6 +165,14 @@ end
 ```
 
 #### Using Modified MAML algorithm to get the best initial control filter
+
+| Parameter | Definition                   | Parameter | Definition            |
+|-----------|------------------------------|-----------|-----------------------|
+| N         | Number of samples in Dataset | Er        | Residual error vector |
+| mu        | Step size                    | lamda     | Forgetting factor     |
+| epslon    | Learning rate of MAML        | Wc        | Control filter        |
+| Phi       | Initial control filter       |           |                       |
+
 ```matlab
 %<<===Progress bar===>> 
 waitbar(0.75,f,'Using Modified MAML algorithm to get the best initial control filter');
