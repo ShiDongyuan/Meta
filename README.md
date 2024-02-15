@@ -7,9 +7,9 @@ This document describes the process and findings of testing the MAML algorithm f
 The purpose of this test is to evaluate the Modified MAML (Model-Agnostic Meta-Learning) algorithm's effectiveness in initializing control filters for noise cancellation.
 
 ## Code Explanation
-- `Main_tst_function.m`: the main function is utilized to test the proposed modified MAML algorithm.  
-- `MAML_Nstep_forget.m`: the matlab code of the modified MAML algorithm.
-- `FxLMS.m`: the matlab code of the FxLMS algorithm.
+- [`Main_tst_function.m`](#the-explanation-of-main_tst_functionm): the main function is utilized to test the proposed modified MAML algorithm.  
+- [`MAML_Nstep_forget.m`](#the-explanation-of-maml_nstep_forgetm): the matlab code of the modified MAML algorithm.
+- [`FxLMS.m`](#the-explanation-of-fxlmsm): the matlab code of the FxLMS algorithm.
 - `707_Sound_for_Simulation.mat`: the raw data of an aircrat noise.
 - `\path`: the measured primary and secondary paths. 
 
