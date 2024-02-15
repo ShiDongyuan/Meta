@@ -166,7 +166,7 @@ end
 
 #### Using Modified MAML algorithm to get the best initial control filter
 
-This segment of the program applies the proposed modified MAML algorithm to compute the best initial control filter.  The step size of the FxLMS algorithm, the learning rate of the MAML algorithm, and the forgetting factor are set to $0.003$, $0.5$, and $0.99$, respectively.
+This segment of the program applies the proposed modified MAML algorithm to compute the best initial control filter for the conventional FxLMS algorithm.  The step size of the FxLMS algorithm, the learning rate of the MAML algorithm, and the forgetting factor are set to $0.003$, $0.5$, and $0.99$, respectively. Figure S2 illustrates the proposed MAML algorithm's learning curve and demonstrates the proposed algorithm's convergence.
 
 | Parameter | Definition                   | Parameter | Definition            |
 |-----------|------------------------------|-----------|-----------------------|
