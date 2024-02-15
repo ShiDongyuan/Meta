@@ -216,6 +216,16 @@ end
 Figure S2: The learning curve of the modified MAML algorithm.
 
 #### Testing aircraft noise cancellation by using MAML initial control filter
+
+The program employs the FxLMS algorithms, utilizing zero initialization and MAML initialization, to reduce the impact of aircraft noise. Figure S3 illustrates the error signal produced by the FxLMS algorithm during both the on and off states. It has been observed that the utilization of MAML initialization significantly enhances the convergence rate of the adaptive algorithm in comparison to the conventional zero initialization approach. 
+
+| Parameter | Definition         | Parameter  | Definition                                     |
+|-----------|--------------------|------------|------------------------------------------------|
+| Pri_1     | Primary noise      | Dis_1      | Disturbance                                    |
+| Rf_1      | Reference signal   | Wc_initial | Initial control filter                         |
+| muw       | Step size          | Er         | Error signal of FxLMS with zero-initialization |
+| Wc        | MAML initial value | Er_1       | Error signal of FxLMS with MAML-initialization |
+
 ```matlab
 %% Testing aircraft noise cancellation by using MAML initial control filter 
 %<<===Progress bar===>> 
