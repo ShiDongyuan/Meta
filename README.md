@@ -417,7 +417,7 @@ end
 
 ## Summray 
 
-A step-by-step guide to preparing the broadband noise for the training set, simulating the noise environment, and applying the MAML algorithm.
+The document provides a detailed introduction to implementing a modified Model-Agnostic Meta-learning (MAML) algorithm in Matlab. This modified MAML algorithm takes the forgetting factor to alleviate the initial-zero-input issue of the adaptive filters. This work uses the proposed method to seek the best initial control filter for the adaptive active noise control system based on its noise dataset. With barely additional computations, the modified MAML algorithm can assist the filtered reference square (FxLMS) algorithm in achieving fast convergence. The numerical simulation demonstrates that the FxLMS algorithm with the MAML initialization converges much faster than that with normal zero initialization when dealing with raw aircraft noise. 
 
 ## Reference 
 ``` bibtex
