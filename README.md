@@ -7,7 +7,7 @@ This document describes the process and findings of testing the MAML algorithm f
 The purpose of this test is to evaluate the Modified MAML (Model-Agnostic Meta-Learning) algorithm's effectiveness in initializing control filters for noise cancellation.
 
 The entire progress of the modified MAML algorithm is shown in Figure 1. This MAML algorithm contains the following steps:
-- Building the input vectors from the randomly sampled pair: $\{\mathbf{x}^\prime(n), \mathbf{d}(n)\}$. Here, $k=n$
+- Building the input vectors from the randomly sampled pair: $\\{\mathbf{x}^\prime(n), \mathbf{d}(n)\\}$. Here, $k=n$
 $$\mathbf{x}^\prime(k-i)=\begin{bmatrix}x'(n-i)&x'(n-i-1)&\cdots&\mathbf{0}\_{1\times i}\end{bmatrix}^\mathrm{T}$$ 
 $$d(k-i)=d(n-i),~~~i=0,1,\cdots,N-1$$
 
