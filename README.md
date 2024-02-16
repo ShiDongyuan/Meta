@@ -6,14 +6,36 @@ This document describes the process and findings of testing the MAML algorithm f
 
 The purpose of this test is to evaluate the Modified MAML (Model-Agnostic Meta-Learning) algorithm's effectiveness in initializing control filters for noise cancellation.
 
-The entire progress of the modified MAML algorithm is shown in Figure 2. This MAML algorithm contains the following steps:
-- Building the input vectors from the randomly sampled pair: $\{\mathbf{x}^\prime(n), \mathbf{d}(n)\}$ . Here, $k=n$
+The entire progress of the modified MAML algorithm is shown in Figure 1. This MAML algorithm contains the following steps:
+- Building the input vectors from the randomly sampled pair: $\{\mathbf{x}^\prime(n), \mathbf{d}(n)\}$. Here, $k=n$
 $$    \begin{equation}
         \begin{cases}
         \mathbf{x}^\prime(k-i)&=\begin{bmatrix}x'(n-i)&x'(n-i-1)&\cdots&\mathbf{0}\_{1\times i}\end{bmatrix}^\mathrm{T}\\ d(k-i)&=d(n-i)\\ i&=0,1,\cdots,N-1\\
         \end{cases}\tag{A1}
     \end{equation}$$
 
+- Get the error signal based on the initial control:
+$$\begin{equation}e^\dag(k)=d(k)-\mathbf{\Phi}^\mathrm{T}(n)\mathbf{x}^\prime(k)\tag{A2}\end{equation}$$
+
+- Obtain the control filter:
+$$    \begin{equation}
+        \mathbf{w}(n) = \mathbf{\Phi}(n)+\mu e^\dag(k)\mathbf{x}^\prime(k) \tag{A3}
+    \end{equation}$$
+
+- Get the error signal based on the new control filter:
+$$    \begin{equation}
+        e(k-i)=d(k-i)-\mathbf{w}^\mathrm{T}(n)\mathbf{x}^\prime (k-i) \tag{A4}
+    \end{equation}$$
+
+- Update the initial value :
+$$    \begin{equation}
+            \mathbf{\Phi}(n+1)	=  	\mathbf{\Phi}(n) +\varepsilon\sum_{i=0}^{N-1}\lambda^i e(k-i)\mathbf{x}^\prime(k-i) \tag{A5}
+    \end{equation} $$
+
+
+<img src=Images/MAML_progress.jpg width=70% />  
+
+Figure 1: Block diagram of the modified MAML algorithm progress.
 
 ## Code Explanation
 - [`Main_tst_function.m`](#the-explanation-of-main_tst_functionm): the main function is utilized to test the proposed modified MAML algorithm.  
