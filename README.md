@@ -4,9 +4,26 @@ This document describes the process and findings of testing the MAML algorithm f
 
 ## Introduction
 
-The purpose of this test is to evaluate the Modified MAML (Model-Agnostic Meta-Learning) algorithm's effectiveness in initializing control filters for noise cancellation.
+The purpose of this test is to evaluate the Modified MAML (Model-Agnostic Meta-Learning) algorithm's effectiveness in initializing control filters for adptive active noise cancellation.
 
-The entire progress of the modified MAML algorithm is shown in Figure 1. This MAML algorithm contains the following steps:
+<img src=Images/Fig_2_Single_FxLMS.jpg width=70% />   
+
+Figure 1: the adaptive feedforward active noise control system based on the filtered reference square (FxLMS) algorithm.
+
+As illustrated in Figure 1, the standard active noise control typically utilizes the filtered reference least mean square (FxLMS) algorithm to realize the adaptive noise cancellation. The error signal in this ANC system is given by
+
+$$\begin{equation}e(n)=d(n)-\mathbf{w}^\mathrm{T}(n)\mathbf{x}^\prime(n),\end{equation}$$
+
+where $d(n)$ and $\mathbf{w}(n)$ denote the disturbance and the control filter vector, respectively. The filtered reference signal is obtained from 
+
+$$x^\prime(n)=\hat{s}(n)\ast x(n).$$
+In the equation, $\hat{s}(n)$ repsenets the estimate of the secondary path. 
+
+According to the gradient descent method, the updation of the control filter in the FxLMS algorithm is given by 
+$$\begin{equation}\mathbf{w}(n+1)=\mathbf{w}(n)+\mu e(n)\mathbf{x}^\prime(n),\end{equation}$$   
+where $\mu$ denotes the step size. From the above recursive formula, we can find that the FxLMS algorithm is highly computationally efficient. However, like other LMS-based algorithms, the FxLMS algorithm also encounters a slow convergence issue. Hence, the following paragram will bring a modified MAML approach to help the standard FxLMS algorithm seek the best initial control filter, which will assist it in achieving a fast convergence behavior. 
+
+The entire progress of the modified MAML algorithm is shown in Figure 2. This MAML algorithm contains the following steps:
 - Building the input vectors from the randomly sampled pair: $\\{\mathbf{x}^\prime(n), \mathbf{d}(n)\\}$. Here, $k=n$
 $$\mathbf{x}^\prime(k-i)=\begin{bmatrix}x'(n-i)&x'(n-i-1)&\cdots&\mathbf{0}\_{1\times i}\end{bmatrix}^\mathrm{T}$$ 
 $$d(k-i)=d(n-i),~~~i=0,1,\cdots,N-1$$
@@ -26,7 +43,7 @@ $$\begin{equation}\mathbf{\Phi}(n+1)=\mathbf{\Phi}(n)+\varepsilon\sum_{i=0}^{N-1
 
 <img src=Images/MAML_progress.jpg width=70% />  
 
-Figure 1: Block diagram of the modified MAML algorithm progress.
+Figure 2: Block diagram of the modified MAML algorithm progress.
 
 ## Code Explanation
 - [`Main_tst_function.m`](#the-explanation-of-main_tst_functionm): the main function is utilized to test the proposed modified MAML algorithm.  
