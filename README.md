@@ -10,7 +10,7 @@ The purpose of this test is to evaluate the Modified MAML (Model-Agnostic Meta-L
 
 Figure 1: the adaptive feedforward active noise control system based on the filtered reference square (FxLMS) algorithm.
 
-As illustrated in Figure 1, the standard active noise control typically utilizes the filtered reference least mean square (FxLMS) algorithm to realize the adaptive noise cancellation. The error signal in this ANC system is given by
+As illustrated in Figure 1, the standard active noise control typically utilizes the **filtered reference least mean square (FxLMS) algorithm** to realize the adaptive noise cancellation. The error signal in this ANC system is given by
 
 $$\begin{equation}e(n)=d(n)-\mathbf{w}^\mathrm{T}(n)\mathbf{x}^\prime(n),\end{equation}$$
 
@@ -23,7 +23,7 @@ According to the gradient descent method, the updation of the control filter in 
 $$\begin{equation}\mathbf{w}(n+1)=\mathbf{w}(n)+\mu e(n)\mathbf{x}^\prime(n),\end{equation}$$
 where $\mu$ denotes the step size. From the above recursive formula, we can find that the FxLMS algorithm is highly computationally efficient. However, like other LMS-based algorithms, the FxLMS algorithm also encounters a slow convergence issue. Hence, the following paragram will bring a modified MAML approach to help the standard FxLMS algorithm seek the best initial control filter, which will assist it in achieving a fast convergence behavior. 
 
-The entire progress of the modified MAML algorithm is shown in Figure 2. This MAML algorithm contains the following steps:
+The entire progress of the **modified MAML algorithm** is shown in Figure 2. This MAML algorithm contains the following steps:
 - Building the input vectors from the randomly sampled pair: $\\{\mathbf{x}^\prime(n), \mathbf{d}(n)\\}$. Here, $k=n$
 $$\mathbf{x}^\prime(k-i)=\begin{bmatrix}x'(n-i)&x'(n-i-1)&\cdots&\mathbf{0}\_{1\times i}\end{bmatrix}^\mathrm{T}$$ 
 $$d(k-i)=d(n-i),~~~i=0,1,\cdots,N-1$$
