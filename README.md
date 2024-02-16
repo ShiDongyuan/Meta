@@ -10,12 +10,8 @@ The entire progress of the modified MAML algorithm is shown in Figure 2. This MA
 - Building the input vectors from the randomly sampled pair: $\{\mathbf{x}^\prime(n), \mathbf{d}(n)\}$ . Here, $k=n$
 $$    \begin{equation}
         \begin{cases}
-        \mathbf{x}^\prime(k-i) &= \begin{bmatrix}
-		x'(n-i) & x'(n-i-1) &\cdots & \mathbf{0}\_{1\times i}
-	\end{bmatrix}^\mathrm{T}\\
-       d(k-i)&=d(n-i)\\
-       i &= 0, 1, \cdots, N-1\\
-        \end{cases} \tag{A1}
+        \mathbf{x}^\prime(k-i)&=\begin{bmatrix}x'(n-i)&x'(n-i-1)&\cdots&\mathbf{0}\_{1\times i}\end{bmatrix}^\mathrm{T}\\ d(k-i)&=d(n-i)\\ i&=0,1,\cdots,N-1\\
+        \end{cases}\tag{A1}
     \end{equation}$$
 
 
