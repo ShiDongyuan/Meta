@@ -29,8 +29,11 @@ $$\begin{equation}\mathbf{w}(n+1)=\mathbf{w}(n)+{\mu}e(n)\mathbf{x}^\prime(n),\e
 where $\mu$ denotes the step size. From the above recursive formula, we can find that the FxLMS algorithm is highly computationally efficient. However, like other LMS-based algorithms, the FxLMS algorithm also encounters a slow convergence issue. Hence, the following paragram will bring a modified MAML approach to help the standard FxLMS algorithm seek the best initial control filter, which will assist it in achieving a fast convergence behavior. 
 
 The entire progress of the **modified MAML algorithm** is shown in Figure 2. This MAML algorithm contains the following steps:
-- Building the input vectors from the randomly sampled pair: $\\{\mathbf{x}^\prime(n), \mathbf{d}(n)\\}$. Here, $k=n$
+- Building the input vectors from the randomly sampled pair:
+
+$\\{\mathbf{x}^\prime(n), \mathbf{d}(n)\\}$. Here, $k=n$
 $$\mathbf{x}^\prime(k-i)=\begin{bmatrix}x'(n-i)&x'(n-i-1)&\cdots&\mathbf{0}\_{1\times i}\end{bmatrix}^\mathrm{T}$$ 
+
 $$d(k-i)=d(n-i),~~~i=0,1,\cdots,N-1$$
 
 - Get the error signal based on the initial control:
