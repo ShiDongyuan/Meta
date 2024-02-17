@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
 
 # Model-Agnostic Meta-Learning (MAML) for Adaptive Filter
 
@@ -22,7 +23,7 @@ $$x^\prime(n)=\hat{s}(n)\ast x(n).$$
 In the equation, $\hat{s}(n)$ repsenets the estimate of the secondary path. 
 
 According to the gradient descent method, the updation of the control filter in the FxLMS algorithm is given by 
-$$\begin{equation}\mathbf{w}(n+1)=\mathbf{w}(n)+\mu e(n)\mathbf{x}^\prime(n),\end{equation}$$
+$$\begin{equation}\mathbf{w}(n+1)=\mathbf{w}(n)+{\mu}e(n)\mathbf{x}^\prime(n),\end{equation}$$
 where $\mu$ denotes the step size. From the above recursive formula, we can find that the FxLMS algorithm is highly computationally efficient. However, like other LMS-based algorithms, the FxLMS algorithm also encounters a slow convergence issue. Hence, the following paragram will bring a modified MAML approach to help the standard FxLMS algorithm seek the best initial control filter, which will assist it in achieving a fast convergence behavior. 
 
 The entire progress of the **modified MAML algorithm** is shown in Figure 2. This MAML algorithm contains the following steps:
