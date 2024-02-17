@@ -16,13 +16,13 @@ $$\begin{equation}e(n)=d(n)-\mathbf{w}^\mathrm{T}(n)\mathbf{x}^\prime(n),\end{eq
 
 where $d(n)$ and $\mathbf{w}(n)$ denote the disturbance and the control filter vector, respectively; and the filtered reference vector is expressed as 
 
-$$\mathbf{x}^\prime(n)=\begin{bmatrix}x^\prime(n)&x^\prime(n-1)&\cdots&x^\prime(n-N+1)\end{bmatrix}^\mathrm{T}$$
+$$\begin{equation}\mathbf{x}^\prime(n)=\begin{bmatrix}x^\prime(n)&x^\prime(n-1)&\cdots&x^\prime(n-N+1)\end{bmatrix}^\mathrm{T}\end{equation}$$
 
 In the above vector, the filtered reference signal is obtained from 
 
-$$x^\prime(n)=\hat{s}(n)\ast x(n),$$
+$$\begin{equation}x^\prime(n)=\hat{s}(n){\ast}x(n),\end{equation}$$
 
-where $\hat{s}(n)$ repsenets the estimate of the secondary path. 
+where $\hat{s}(n)$ repsenets the impulse response of the secondary path estimate. 
 
 According to the gradient descent method, the updation of the control filter in the FxLMS algorithm is given by 
 
