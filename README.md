@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
-
 # Model-Agnostic Meta-Learning (MAML) for Adaptive Filter
 
 This document describes the process and findings of testing the MAML algorithm for enhancing the convergence of the FxLMS algorithm in noise cancellation applications, specifically targeting aircraft noise.
