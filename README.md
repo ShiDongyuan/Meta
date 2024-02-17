@@ -14,10 +14,15 @@ As illustrated in Figure 1, the standard active noise control typically utilizes
 
 $$\begin{equation}e(n)=d(n)-\mathbf{w}^\mathrm{T}(n)\mathbf{x}^\prime(n),\end{equation}$$
 
-where $d(n)$ and $\mathbf{w}(n)$ denote the disturbance and the control filter vector, respectively. The filtered reference signal is obtained from 
+where $d(n)$ and $\mathbf{w}(n)$ denote the disturbance and the control filter vector, respectively; and the filtered reference vector is expressed as 
 
-$$x^\prime(n)=\hat{s}(n)\ast x(n).$$
-In the equation, $\hat{s}(n)$ repsenets the estimate of the secondary path. 
+$$\mathbf{x}^\prime(n)=\begin{bmatrix}x^\prime(n)&x^\prime(n-1)&\cdots&x^\prime(n-N+1)\end{bmatrix}^\mathrm{T}$$
+
+In the above vector, the filtered reference signal is obtained from 
+
+$$x^\prime(n)=\hat{s}(n)\ast x(n),$$
+
+where $\hat{s}(n)$ repsenets the estimate of the secondary path. 
 
 According to the gradient descent method, the updation of the control filter in the FxLMS algorithm is given by 
 
