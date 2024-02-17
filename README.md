@@ -37,15 +37,19 @@ $$\mathbf{x}^\prime(k-i)=\begin{bmatrix}x'(n-i)&x'(n-i-1)&\cdots&\mathbf{0}\_{1\
 $$d(k-i)=d(n-i),~~~i=0,1,\cdots,N-1$$
 
 - Get the error signal based on the initial control:
+
 $$\begin{equation}e^+(k)=d(k)-\mathbf{\Phi}^\mathrm{T}(n)\mathbf{x}^\prime(k)\tag{A2}\end{equation}$$
 
 - Obtain the control filter:
+
 $$\begin{equation}\mathbf{w}(n) = \mathbf{\Phi}(n)+\mu e^+(k)\mathbf{x}^\prime(k) \tag{A3}\end{equation}$$
 
 - Get the error signal based on the new control filter:
+
 $$\begin{equation}e(k-i)=d(k-i)-\mathbf{w}^\mathrm{T}(n)\mathbf{x}^\prime (k-i) \tag{A4}\end{equation}$$
 
 - Update the initial value :
+
 $$\begin{equation}\mathbf{\Phi}(n+1)=\mathbf{\Phi}(n)+\varepsilon\sum_{i=0}^{N-1}\lambda^ie(k-i)\mathbf{x}^\prime(k-i)\tag{A5}\end{equation} $$
 
 
