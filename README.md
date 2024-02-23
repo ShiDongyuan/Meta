@@ -59,6 +59,14 @@ $$\begin{equation}\mathbf{\Phi}(n+1)=\mathbf{\Phi}(n)+\varepsilon\sum_{i=0}^{N-1
 
 Figure 2: Block diagram of the modified MAML algorithm progress.
 
+The The entire progress of the modified MAML algorithm is shown in Figure 2. The one epoch of this algorithm consists of three stages.
+
+- **Stage 1**: The initial control filter vector $\mathbf{\Phi}(n)$ will take one step to update the pseudo optimal control filter $\mathbf{w}(n)$.
+- **Satge 2**: The pseudo-optimal control filter $\mathbf{w}(n)$ will be used to cancel the disturbance samples with their corresponding filtered reference vector and get the gradients.
+- **Stage 3**: These gradients are used to update the initial control filter vector $\mathbf{\Phi}(n) $ so that to get the new value $\mathbf{\Phi}(n+1) $. 
+
+In that way, the program continues to the next epoch ($n+1$) until the algorithm converges. 
+
 ## Code Explanation
 - [`Main_tst_function.m`](#the-explanation-of-main_tst_functionm): the main function is utilized to test the proposed modified MAML algorithm.  
 - [`MAML_Nstep_forget.m`](#the-explanation-of-maml_nstep_forgetm): the matlab code of the modified MAML algorithm.
